@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="shopify_customize_view_form" model="ir.ui.view">
+            <field name="name">shopify.customize.form</field>
+            <field name="model">shopify.customize</field>
+            <field name="arch" type="xml">
+                <form string="Note Information Shopify">
+                    <sheet>
+<!--                        <field name="name"></field>-->
+                        <field name="user_id" />
+                        <field name="customization_setting" />
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="shopify_customize_tree_view" model="ir.ui.view">
+            <field name="name">shopify.customize.tree</field>
+            <field name="model">shopify.customize</field>
+            <field name="arch" type="xml">
+                <tree string="Shopify contact">
+<!--                    <field name="name"/>-->
+                    <field name="user_id"/>
+                </tree>
+
+            </field>
+
+        </record>
+
+         <record id="shopify_customize_act_window" model="ir.actions.act_window">
+            <field name="name">Shopify Customize</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">shopify.customize</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+          <menuitem name="Shopify Customize " id="s_shopify_customize" parent="s_shopify_root1"
+                  action="shopify_customize_act_window"/>
+
+    </data>
+</odoo>

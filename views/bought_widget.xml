@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="bought_together_form_view" model="ir.ui.view">
+            <field name="name">bought.widget.form</field>
+            <field name="model">bought.widget</field>
+            <field name="arch" type="xml">
+                <form string="Widget">
+                    <sheet>
+                        <group>
+                            <field name="shop_id"/>
+                            <field name="product_ids"/>
+                            <field name="type"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="bought_together_tree_view" model="ir.ui.view">
+            <field name="name">bought.widget.tree</field>
+            <field name="model">bought.widget</field>
+            <field name="arch" type="xml">
+                <tree string="Access Token">
+                    <field name="shop_id"/>
+                    <field name="product_ids"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+
+
+         <record id="bought_together_act_window" model="ir.actions.act_window">
+            <field name="name">Widget</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bought.widget</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Widget" id="s_store_root_widget" parent="s_shopify_root1" action="bought_together_act_window"/>
+
+    </data>
+</odoo>

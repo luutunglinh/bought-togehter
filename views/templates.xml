@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <template id="sample_app_template">
+            &lt;!DOCTYPE html&gt;
+            <head>
+                <title>Sample App</title>
+                <link rel="shortcut icon" sizes="196x196" href="/sample_app/static/img/logo.jpeg"/>
+                <meta name="viewport" content="width=device-width"/>
+            </head>
+            <div id="sample-app"/>
+            <script>
+                window.app_settings = <t t-raw="app_settings"/>
+            </script>
+            <!-- use in local instead assets (ctrl + f5) refresh code-->
+            <script type="text/javascript" src="/sample_app/static/js/index.js"/>
+            <!-- ##-->
+            <!-- use in server, restart server refresh code-->
+            <!-- <t t-call-assets="sample_app.js_package_assets"/>-->
+        </template>
+    </data>
+</odoo>

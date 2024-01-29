@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_token_shopify,access_token_shopify,model_access_token,base.group_user,1,1,1,1
+shopify_order,shopify_order,model_shopify_order,base.group_user,1,1,1,1
+shopify_product,shopify_product,model_shopify_product,base.group_user,1,1,1,1
+shopify_order_line,shopify_order_line,model_shopify_order_line,base.group_user,1,1,1,1
+bought_widget,bought_widget,model_bought_widget,base.group_user,1,1,1,1
+shopify_contact,shopify_contact,model_shopify_contact,base.group_user,1,1,1,1
+shopify_history,shopify_history,model_shopify_history,base.group_user,1,1,1,1
+fetch_product_wizard,fetch_product_wizard,model_fetch_product_wizard,base.group_user,1,1,1,1
+shopify_customize,shopify_customize,model_shopify_customize,base.group_user,1,1,1,1

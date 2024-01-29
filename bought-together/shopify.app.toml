@@ -1,0 +1,25 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "test02"
+client_id = "d5ca7096dffb9f61bfbbcef61c28ba19"
+application_url = "https://odoo.website/test-shopify"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+use_legacy_install_flow = true
+
+[auth]
+redirect_urls = [ "https://odoo.website/test-shopify/finalize" ]
+
+[webhooks]
+api_version = "2023-04"
+
+[app_proxy]
+url = "https://eb22-27-72-103-14.ngrok-free.app/"
+subpath = "bt"
+prefix = "apps"
+
+[pos]
+embedded = false

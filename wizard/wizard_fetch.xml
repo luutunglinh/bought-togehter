@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="shopify_fetch_product_wizard_view" model="ir.ui.view">
+            <field name="name">fetch.product.wizard.view</field>
+            <field name="model">fetch.product.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Fetch data from shopify">
+
+                    <group>
+                        <field name="shop_id"/>
+                        <field name="data_selection"/>
+                    </group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <p>
+                        Apply updating on the selected record(s)?
+                    </p>
+                    <footer>
+                        <button name="fetch_shopify" string="Fetch Products" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="shopify_fetch_product_wizard_act_window" model="ir.actions.act_window">
+            <field name="name">Fetch data</field>
+            <field name="res_model">fetch.product.wizard</field>
+             <field name="binding_model_id" ref="model_shopify_order"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="shopify_fetch_product_wizard_view"/>
+        </record>
+
+        <menuitem id="fetch_data_root"
+            name="Fetch" parent="s_shopify_root1"
+                  sequence="2"
+        />
+
+         <menuitem
+                id = "shopify_wizard_product"
+                name="Fetch shopify product"
+                parent="fetch_data_root"
+                action="shopify_fetch_product_wizard_act_window"
+                sequence="1"
+        />
+
+    </data>
+</odoo>

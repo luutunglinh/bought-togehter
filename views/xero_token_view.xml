@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="xero_token_form" model="ir.ui.view">
+            <field name="name">shopify.xero.token.form</field>
+            <field name="model">shopify.xero.token</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+<!--                        <button name="reconnect" string="Reconnect Xero" class="oe_highlight" type="object"></button>-->
+                        <button name="update_invoice" string="Post invoices" class="oe_highlight" type="object"></button>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="state"/>
+                                <field name="refresh_token"/>
+                                <field name="access_token_time_out"/>
+                                <field name="refresh_token_time_out"/>
+                            </group>
+                            <group>
+                                <field name="id_token_time_out"/>
+                                <field name="shopify_id"/>
+                                <field name="tenant_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="xero_token_tree" model="ir.ui.view">
+            <field name="name">shopify.xero.token.tree</field>
+            <field name="model">shopify.xero.token</field>
+             <field name="arch" type="xml">
+                <tree string="Model xero">
+                    <field name="refresh_token"/>
+                    <field name="access_token_time_out"/>
+                    <field name="refresh_token_time_out"/>
+                    <field name="shopify_id"/>
+                </tree>
+             </field>
+        </record>
+
+    </data>
+</odoo>

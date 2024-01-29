@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="access_token_form_view" model="ir.ui.view">
+            <field name="name">access.token.form</field>
+            <field name="model">access.token</field>
+            <field name="arch" type="xml">
+                <form string="Access Token">
+                    <header>
+                        <button name="connect_xero" string="Connect Xero"></button>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box" position="inside">
+                            <button name="redirect_home" type="object" class="oe_start_button" icon="fa-globe icon">
+                                <div class="o_field_widget o_start_info">
+                                    <span class="o_start_text">Redirect Home</span>
+                                </div>
+                                <!--                                <button name="view_products" type="object" class="oe_start_button" icon="fa-star">-->
+                                <!--                                    <div class="o_field_widget o_stat_info">-->
+                                <!--                                        <span class="o_stat_text">Products</span>-->
+                                <!--                                    </div>-->
+                                <!--                                </button>-->
+                                <!--                                <button name="view_orders" type="object" class="oe_start_button" icon="fa-magic">-->
+                                <!--                                    <div class="o_field_widget o_stat_info">-->
+                                <!--                                        <span class="o_stat_text">Orders</span>-->
+                                <!--                                    </div>-->
+                                <!--                                </button>-->
+                                <!--                                <button name="view_xero" type="object" class="oe_start_button" icon="fa-list">-->
+                                <!--                                    <div class="o_field_widget o_stat_info">-->
+                                <!--                                        <span class="o_stat_text">Token Xero</span>-->
+                                <!--                                    </div>-->
+                                <!--                                </button>-->
+                            </button>
+                        </div>
+                        <h1 class="oe_title">
+                            <field name="name"/>
+                        </h1>
+                        <group>
+                            <group>
+
+                                <field name="shop_url"/>
+                                <field name="access_token"/>
+                                <field name="email"/>
+                            </group>
+                            <group>
+                                <field name="currency"/>
+                                <field name="country_code"/>
+                                <field name="country_name"/>
+                                <field name="status"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="access_token_tree_view" model="ir.ui.view">
+            <field name="name">access.token.tree</field>
+            <field name="model">access.token</field>
+            <field name="arch" type="xml">
+                <tree string="Access Token">
+                    <field name="name"/>
+                    <field name="shop_url"/>
+                    <field name="access_token"/>
+                    <field name="currency"/>
+                    <field name="country_name"/>
+                    <field name="email"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+         <record id="access_shopify_act_window" model="ir.actions.act_window">
+            <field name="name">Shopify Shop</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">access.token</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Shopify Test" id="s_shopify_root1" />
+        <menuitem name="Store1" id="s_store_root1" parent="s_shopify_root1" action="access_shopify_act_window"/>
+
+    </data>
+</odoo>

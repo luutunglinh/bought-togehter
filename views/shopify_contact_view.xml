@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="shopify_contact_view_form" model="ir.ui.view">
+            <field name="name">shopify.contact.form</field>
+            <field name="model">shopify.contact</field>
+            <field name="arch" type="xml">
+                <form string="Contact">
+                    <sheet>
+                        <div class="oe-title">
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="shopify_contact_id"/>
+                                <field name="shop_id"/>
+                                <field name="phone"/>
+                                <field name="email"/>
+                                <field name="xero_contact_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="shopify_contact_tree_view" model="ir.ui.view">
+            <field name="name">shopify.contact.tree</field>
+            <field name="model">shopify.contact</field>
+            <field name="arch" type="xml">
+                <tree string="Contact">
+                    <field name="shopify_contact_id"/>
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="shop_id"/>
+                    <field name="xero_contact_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="shopify_contact_act_window" model="ir.actions.act_window">
+            <field name="name">Shopify Contact</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">shopify.contact</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Shopify contact " id="s_shopify_contact" parent="s_shopify_root1"
+                  action="shopify_contact_act_window"/>
+
+    </data>
+</odoo>
