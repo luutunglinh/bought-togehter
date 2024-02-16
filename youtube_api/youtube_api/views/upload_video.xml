@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="upload_video_form_view" model="ir.ui.view">
+            <field name="name">upload.video.form.view</field>
+            <field name="model">upload.video</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box" position="inside">
+                            <button name="upload_video" type="object" class="oe_start_button" icon="fa-globe icon"
+                                attrs="{'invisible':[('video_file','=',False)]}"
+                            >
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Upload video</span>
+                                </div>
+                            </button>
+                        </div>
+
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="categoryId"/>
+                            <field name="tags"/>
+                            <field name="publishAt"/>
+                            <field name="channel"/>
+                            <field name="isPublish"/>
+                            <field name="video_file"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="upload_video_tree_view" model="ir.ui.view">
+            <field name="name">upload.video.tree.view</field>
+            <field name="model">upload.video</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="channel"/>
+                    <field name="publishAt"/>
+                    <field name="isPublish"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="upload_video_act_window" model="ir.actions.act_window">
+            <field name="name">Youtube Video</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">upload.video</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem
+                name="Upload Video"
+                id="upload_video"
+                parent="google_root"
+                action="upload_video_act_window"
+                sequence="35"
+        />
+
+
+    </data>
+</odoo>
